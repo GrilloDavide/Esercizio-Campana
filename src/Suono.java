@@ -16,6 +16,16 @@ public class Suono extends Thread{
 
     @Override
     public void run() {
-        campana.emettiSuono(suono);
+        while(true){
+            try {
+                campana.emettiSuono(suono);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+
+
+
     }
 }
